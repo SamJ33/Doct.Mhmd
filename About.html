@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Mohammad Yazbeck | Neurosurgeon Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="icon" href="Doctor Mohammad Yazbeck-ENH2.ico" type="image/png" />
+
+  <style>
+    * {
+      margin: 0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    /* Desktop Nav */
+nav.desktop-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav.desktop-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+nav.desktop-nav a:hover {
+  color: #0dcaf0;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #004080;
+  overflow-x: hidden;
+  transition: 0.3s ease;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.mobile-sidebar a {
+  display: block;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.mobile-sidebar .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 2rem;
+}
+
+
+.timeline-wrapper {
+  position: relative;
+  z-index: 2;
+  background-image: url('codioful-formerly-gradienta-OzfD79w8ptA-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 2rem;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.timeline-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px, 1fr));
+}
+.icon {
+  width: 37px;   /* Adjust size as needed */
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 8px;  /* Optional spacing next to text */
+}
+.heading{
+    font-size:2.5rem;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+
+.content-box{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+    padding: 2rem;
+    margin: 0 2rem;
+    background-color:rgba(255,255,255,0.15);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border:3px solid rgb(110,110,110);
+    border-radius: 1rem;
+    font-size: 14px;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+.content-box:hover{
+    box-shadow:0 0 25px rgb(0,255,255);
+    border: 3px solid rgb(0,255,255);
+}
+.timeline-box{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+    border-left:5px solid rgb(0,255,255);
+}
+.content-box h3{
+    font-size: 1.3rem;
+}
+.date{
+    font-size:1.7rem;
+    color:rgb(0,255,225);
+    font-weight: 700;
+}
+.content-box::before{
+    position:absolute;
+    content:"";
+    width:25px;
+    height:25px;
+    background-color:rgb(0,255,255);
+    border-radius:50%;
+    left:-50px;
+    top:90px;
+}
+/* Overlay for readability */
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark transparent overlay */
+  z-index: 1;
+}
+
+/* Ensure timeline content is on top */
+.timeline-wrapper > * {
+  position: relative;
+  z-index: 2;
+}
+.swiper-section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  padding-top: 50px;
+  color: #004080;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 5rem 3rem 3rem;
+  font-size: 1rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #0dcaf0;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+}
+
+.footer-section a {
+  color: #0dcaf0;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #555;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.social-icons a {
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.social-icons img {
+  
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+.about-section {
+  position: relative;      /* To keep it well contained */
+  padding: 6rem 4rem;      /* Some padding inside the section */
+  background-image: url('Cerebal.jpeg');  /* Your image path */
+  background-repeat: no-repeat;
+  background-position: center;  /* Align image to the right vertically centered */
+  background-size:cover;      /* Cover about half the width, adjust as needed */
+  background-color: #222;  /* Optional fallback color, or your preferred */
+  color: #f0f0f0;          /* Off-white text color */
+  min-height: 400px;       /* Make sure it has some height */
+}
+
+.about-section h2 {
+  font-weight: 800;
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-section p {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: white;
+  max-width: 700px;  /* limits width for readability */
+  font-family: 'Inter', sans-serif;
+}
+.about-section::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;           /* full width of the parent */
+  height: 80%;          /* full height of the parent */
+  content: "";
+  margin-top: 50px;      /* you can keep or adjust this */
+  padding-bottom: 0;
+  background: linear-gradient(to right, rgba(0, 64, 128, 0.6), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-text {
+  position: relative;
+  z-index: 2;
+  color: #f0f0f0;  /* off-white */
+}
+.highlight-list ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  max-width: 350px;       /* Limits line width */
+  line-height: 1.5;
+  font-size: 1.1rem;
+  padding-left: 1rem;
+  color: #f0f0f0;         /* Off-white for visibility on dark bg */
+}
+
+.highlight-list ul li {
+  margin-bottom: 0.6rem;  /* small gap between items */
+  word-break: break-word; /* prevent overflow */
+}
+
+.swiper {
+      width: 100%;
+      max-width: 1200px;
+      padding: 2rem 3rem;
+    }
+
+    .swiper-slide {
+      background-color: #fff;
+      border-radius: 12px;
+      height: 450px; /* tall */
+      width: 200px;  /* narrow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+.card-title{
+  margin-bottom: 1rem;
+}
+
+
+    .card-title a {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      margin-bottom: 1rem;
+   
+    }
+
+    .card-title a:hover {
+      text-decoration: underline;
+      color: #004080;
+    }
+
+    .card-content {
+      text-align: center;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #004080;
+      transform: scale(1.5);
+      
+    }
+
+    .content-box h3 a {
+  color: rgb(0,255,255);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.content-box h3 a:hover {
+  
+  color:white;
+}
+
+
+   @media (max-width: 768px) {
+     nav.desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  .hero {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  .hero-text {
+    max-width: 100%;
+  }
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Make the button more mobile-friendly */
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+  </style>
+</head>
+<script>
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById("mobileSidebar");
+    sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+  }
+
+
+</script>
+
+<body>
+ <header>
+  <h1>Dr. Mohammad Yazbeck</h1>
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+  <a href="index.html" onclick="toggleSidebar()">Home</a>
+    <a href="About.html" onclick="toggleSidebar()">About Me</a>
+    <a href="Services.html" onclick="toggleSidebar()">Services</a>
+    <a href="Contactus.html" onclick="toggleSidebar()">Contact Me</a>
+  </nav>
+
+  <!-- Hamburger Icon for Mobile -->
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+</header>
+
+<!-- Sidebar Navigation for Mobile -->
+<div id="mobileSidebar" class="mobile-sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+  <a href="index.html">Home</a>
+  <a href="About.html">About Me</a>
+  <a href="Services.html">Services</a>
+  <a href="Contactus.html">Contact Me</a>
+</div>
+
+
+<section class="about-section">
+    <div class="about-text">
+ <h2>About Me</h2>
+  <p>
+    Dr. Mohammad Yazbeck is a skilled neurosurgeon with advanced training in France and over a decade of clinical experience. His practice focuses on complex brain and spine surgeries, with a special emphasis on preserving critical neurological functions. He integrates cutting-edge techniques such as awake craniotomy and MRI tractography, and is an active contributor to neurosurgical research through publications on rare conditions and advanced procedures. Dr. Yazbeck is known for combining scientific precision with compassionate, patient-centered care.
+  </p>
+</div>
+</section>
+
+<div class="timeline-wrapper">
+  <div class="timeline-row">
+    <div class="timeline-col">
+      <h2 class="heading">
+        <img src="Grad-removebg-preview.png" alt="calendar" class="icon" />
+        Education
+      </h2>
+
+      <div class="timeline-box">
+
+        <div class="content-box">
+          <div class="date">
+            <img src="calendar-icon-white-592896-removebg-preview.png" alt="calendar" class="icon" />
+            2021–2022
+          </div>
+          <h3><a href="Diplôme D'université IMAGERIE NEUROVASCULAIRE DIAGNOSTIQUE ET THÉRAPEUTIQUE.pdf" target="_blank">
+            Diplôme Universitaire d’Imagerie Neurovasculaire Diagnostique et Thérapeutique-University of Paris Cité, France</h3>
+            </a>
+          <p>
+            Dr. Mohammad Yazbeck obtained a University Diploma in Diagnostic and Therapeutic Neurovascular Imaging from the prestigious Université Paris Cité in France. This specialized certification, awarded for the academic year 2021–2022, demonstrates advanced expertise in both imaging and intervention techniques for neurovascular conditions. It reflects Dr. Yazbeck’s commitment to mastering cutting-edge technologies used in diagnosing and treating complex brain and vascular disorders.
+            </p>
+        </div>
+<div class="content-box">
+          <div class="date">
+            <img src="calendar-icon-white-592896-removebg-preview.png" alt="calendar" class="icon" />
+            2021–2022
+          </div>
+          <h3><a href="attestation de réussite au diplôme imagerie thérapeutique et diagnostic neurovasculaire .pdf" target="_blank">
+            Attestation de Réussite au Diplôme Universitaire en Imagerie Thérapeutique et Diagnostic Neurovasculaire</h3>
+            </a>
+          <p>
+            In 2022, Dr. Mohammad Yazbeck was awarded this advanced university diploma, recognizing his successful completion of specialized training in neurovascular imaging. This qualification highlights his expertise in both the diagnosis and interventional treatment of neurovascular conditions through cutting-edge medical imaging technologies. It underscores his commitment to excellence in modern neurosurgical and diagnostic practices.
+
+</p>
+        </div>
+        <div class="content-box">
+          <div class="date">
+            <img src="calendar-icon-white-592896-removebg-preview.png" alt="calendar" class="icon" />
+            2021–2022
+          </div>
+          <h3><a href="diplôme de neurochirurgie fr. eng.pdf" target="_blank">
+            The Specialization Certificate in Neurosurgery-Lebanese University</h3>
+            </a>
+          <p>
+            For Dr. Mohammad Yazbeck, this certification confirms his recognized competence as a specialist neurosurgeon, trained to deliver high-standard care in both elective and emergency neurosurgical settings.
+
+
+          </p>
+        </div>
+        <div class="content-box">
+          <div class="date">
+             <img src="calendar-icon-white-592896-removebg-preview.png" alt="calendar" class="icon" />
+             2019-2018
+          </div>
+          <h3><a href="diplôme microchirurgie Saint Joseph.pdf" target="_blank">
+            Microsurgery Diploma – Saint Joseph University of Beirut</h3>
+            </a>
+          <p>
+           This diploma certifies Dr. Mohammad Yazbeck’s specialized training in microsurgery, a highly precise discipline used to operate on delicate anatomical structures such as nerves, blood vessels, and the brain. Obtained from Saint Joseph University of Beirut, this qualification reflects advanced proficiency in microscope-assisted surgical techniques, which are essential in neurosurgery and reconstructive surgery.
+
+</p>
+        </div>
+        <div class="content-box">
+          <div class="date">
+             <img src="calendar-icon-white-592896-removebg-preview.png" alt="calendar" class="icon" />
+           2018-2017
+            </div>
+         <h3><a href="diploma master neuroscience.pdf" target="_blank">
+Master of Science–Research, Lebanese University (Faclty of Medical Sciences)</h3>
+            </a>
+          <p>
+            This Master’s degree highlights Dr. Mohammad Yazbeck’s academic foundation in medical research, earned from the Faculty of Medical Sciences at the Lebanese University
+            </p>
+        </div>
+        <div class="content-box">
+          <div class="date">
+             <img src="calendar-icon-white-592896-removebg-preview.png" alt="calendar" class="icon" />
+            2016–2015
+          </div>
+          <h3><a href="YAZBECK_Mohamad_diplôme de médecine fr.pdf" target="_blank">
+            Doctor of Medicine (M.D.) – Lebanese University</h3>
+            </a>
+          <p>
+            Dr. Mohammad Yazbeck earned his medical degree from the Lebanese University, one of the most prestigious public institutions in Lebanon. His education provided a strong foundation in clinical sciences and patient care, setting the stage for his specialization in neurosurgery. During his studies, he demonstrated academic excellence, surgical precision, and a passion for neurological health.
+          </p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ 
+<h2 class="swiper-section-title">
+  Published over 21+ Research papers on Research Gate
+</h2>
+ <!-- Swiper Container -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+
+    <!-- Card 1 -->
+    <div class="swiper-slide">
+      <div class="card-title">
+        <a href="https://www.researchgate.net/publication/392162409_Aqueductal_Stenosis_Pathophysiology_Diagnosis_and_Treatment_Modalities?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGUiLCJwYWdlIjoicHJvZmlsZSJ9fQ" target="_blank">Aqueductal Stenosis: Pathophysiology, Diagnosis, and Treatment Modalities</a>
+      </div>
+      <div class="card-content">
+        Aqueductal stenosis causes hydrocephalus by blocking CSF flow, increasing brain pressure.
+VP shunts and ETV are main treatments, but each has limitations.
+New methods like neuronavigation and robotic endoscopy are improving outcomes.
+This review explores surgical advances and long-term management strategies.
+
+
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="swiper-slide">
+      <div class="card-title">
+        <a href="https://www.researchgate.net/publication/391083563_Navigating_the_complexity_of_atypical_teratoidrhabdoid_tumor_ATRT_in_pediatric_neuro-oncology_Insights_from_clinical_spectrum_to_therapeutic_challenges" target="_blank">Navigating the complexity of atypical teratoid/rhabdoid tumor (ATRT) in pediatric neuro-oncology: Insights from clinical spectrum to therapeutic challenges</a>
+      </div>
+      <div class="card-content">
+        Atypical teratoid/rhabdoid tumor (ATRT) is a rare, aggressive brain tumor in very young children.
+This case details a 2-year-old with infratentorial ATRT successfully treated with surgery and chemotherapy.
+Despite early progression, a second surgery achieved full resection, and the child remains symptom-free after four years.
+The case highlights the need for early diagnosis, aggressive therapy, and close follow-up for better outcomes.
+
+
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="swiper-slide">
+      <div class="card-title">
+        <a href="https://www.researchgate.net/publication/382030345_e_effect_of_resection_of_gliomas_of_the_primary_motor_and_sensory_cortex_on_functional_recovery_and_seizure_outcome_A_10-year_retrospective_study" target="_blank">The effect of resection of gliomas of the primary motor and sensory cortex on functional recovery and seizure outcome: A 10-year retrospective study</a>
+      </div>
+      <div class="card-content">
+        This study assessed outcomes of Rolandic cortex glioma resections in 40 patients over 10 years.
+Gross total resection (GTR) was linked to improved motor function, daily activity, and quality of life.
+Despite a 20% recurrence rate, 1-year survival was 92.5%, and functional recovery was common.
+Awake craniotomy and stimulation mapping proved effective for safe resection in eloquent brain areas.
+
+
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="swiper-slide">
+      <div class="card-title">
+        <a href="https://www.researchgate.net/publication/378009913_Combined_Endoscopic_Transmaxillary_Approach_for_Resection_of_an_Extracranial_V3_Schwannoma_2-Dimensional_Operative_Video" target="_blank">Combined Endoscopic Transmaxillary Approach for Resection of an Extracranial V3 Schwannoma: 2-Dimensional Operative Video</a>
+      </div>
+      <div class="card-content">
+       This case highlights the successful removal of a trigeminal V3 schwannoma extending into the pterygopalatine and infratemporal fossae using a combined endoscopic endonasal and transgingival transmaxillary approach.
+The technique provided optimal access to lateral and inferior tumor areas, improved surgical handling, and minimized aesthetic and stomatological complications.
+Postoperative outcomes were excellent, with complete tumor resection, resolution of neuralgia, and no recurrence during follow-up.
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="swiper-slide">
+      <div class="card-title">
+        <a href="https://www.researchgate.net/publication/374836599_Unveiling_Dandy-Walker_syndrome_A_surprising_twist_in_the_tale_of_acute_hydrocephalus_and_Down_syndrome_child" target="_blank">Unveiling Dandy-Walker syndrome: A surprising twist in the tale of acute hydrocephalus and Down syndrome child</a>
+      </div>
+      <div class="card-content">
+        This case presents the first known instance of an 11-year-old with both Down syndrome and undiagnosed Dandy-Walker syndrome, a highly rare combination with only four previous cases reported—all in infants.
+The patient developed acute intracranial hypertension due to hydrocephalus from a Dandy-Walker malformation.
+A ventriculo-cysto-peritoneal shunt was successfully used to relieve pressure.
+This case highlights that even in asymptomatic older children, hydrocephalus from Dandy-Walker can emerge and be effectively treated.
+      </div>
+    </div>
+
+  </div>
+    <!-- Navigation buttons -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Swiper Config -->
+  <script>
+  const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  grabCursor: true,
+  speed: 800,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.2
+    },
+    768: {
+      slidesPerView: 2.2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+});
+
+  </script>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>About Me</h4>
+      <p>Dr. Mohammad Yazbeck is a neurosurgeon specialized in skull base and minimally invasive spine surgery, combining advanced techniques with patient-focused care.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Get in Touch</h4>
+      <p><strong>Phone:</strong> <a href="tel:+96170754660">+961 70 754 660</a></p>
+      <p><strong>Email:</strong> <a href="mailto:mhdyazbeck@gmail.com">mhdyazbeck@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohamad-yazbeck-442bbb1b4" target="_blank">Visit Profile</a></p>
+    </div>
+    <div class="footer-section">
+      <h4>Additional Links</h4>
+      <p><a href="operations.html">Major Operations</a></p>
+      <p><a href="qualifications.html">Qualifications</a></p>
+      <p><a href="appointments.html">Book Appointment</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Dr. Mohammad Yazbeck. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/mohamad-yazbeck-442bbb1b4" target="_blank"><img src="icons8-linkedin-60.png" alt="LinkedIn" /></a>
+      <a href="#"><img src="icons8-facebook-60.png" alt="Facebook" /></a>
+      <a href="https://www.researchgate.net/profile/Mohamad-Yazbeck-2" target="_blank"><img src="icons8-researchgate-64.png" alt="ResearchGate" /></a>
+
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

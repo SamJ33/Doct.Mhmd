@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Mohammad Yazbeck | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet" />
+<link rel="icon" href="Doctor Mohammad Yazbeck-ENH2.ico" type="image/png" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: url('contact-bg.jpg'); /* Your image */
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav.desktop-nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav.desktop-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav.desktop-nav a:hover {
+      color: #0dcaf0;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2.2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .mobile-sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #004080;
+      overflow-x: hidden;
+      transition: 0.3s ease;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .mobile-sidebar a {
+      display: block;
+      padding: 1rem 2rem;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .mobile-sidebar .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 2rem;
+    }
+
+    /* MAIN CONTENT WRAPPER: takes remaining space and centers form */
+    main {
+      flex-grow: 1; /* fills space between header and footer */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .contact-container {
+      background-color: rgba(0, 64, 128, 0.85);
+      padding: 3rem 2rem;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      color: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      margin-bottom: 0.3rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      background-color: #0dcaf0;
+      color: black;
+      font-weight: bold;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #00b0d4;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        padding: 2rem 1rem;
+      }
+      nav.desktop-nav {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 5rem 3rem 3rem;
+      font-size: 1rem;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+    }
+
+    .footer-section {
+      flex: 1 1 250px;
+    }
+
+    .footer-section h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #0dcaf0;
+    }
+
+    .footer-section p, .footer-section a {
+      margin: 0.5rem 0;
+      color: #0dcaf0;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #555;
+      padding-top: 1.5rem;
+      text-align: center;
+    }
+
+    .social-icons a {
+      margin: 0 0.5rem;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Dr. Mohammad Yazbeck</h1>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="About.html">About Me</a>
+      <a href="Services.html">Services</a>
+      <a href="Contactus.html">Contact Me</a>
+    </nav>
+
+    <!-- Hamburger Icon for Mobile -->
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  </header>
+
+  <!-- Sidebar Navigation for Mobile -->
+  <div id="mobileSidebar" class="mobile-sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+    <a href="index.html">Home</a>
+    <a href="About.html">About Me</a>
+    <a href="Services.html">Services</a>
+    <a href="Contactus.html">Contact Me</a>
+  </div>
+
+  <!-- Main content area: center contact form -->
+  <main>
+    <div class="contact-container">
+      <h1>Message Dr. Yazbeck on WhatsApp</h1>
+      <form id="whatsappForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Full name" required />
+
+        <label for="phone">Your Phone</label>
+        <input type="tel" id="phone" placeholder="+961..." required />
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Type your message..." required></textarea>
+
+        <button type="submit">Send via WhatsApp</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-section">
+        <h4>About Me</h4>
+        <p>Dr. Mohammad Yazbeck is a neurosurgeon specialized in skull base and minimally invasive spine surgery, combining advanced techniques with patient-focused care.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Get in Touch</h4>
+        <p><strong>Phone:</strong> <a href="tel:+96170754660">+961 70 754 660</a></p>
+        <p><strong>Email:</strong> <a href="mailto:mhdyazbeck@gmail.com">mhdyazbeck@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohamad-yazbeck-442bbb1b4" target="_blank" rel="noopener">Visit Profile</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Additional Links</h4>
+        <p><a href="operations.html">Major Operations</a></p>
+        <p><a href="qualifications.html">Qualifications</a></p>
+        <p><a href="appointments.html">Book Appointment</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dr. Mohammad Yazbeck. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/mohamad-yazbeck-442bbb1b4" target="_blank" rel="noopener"><img src="icons8-linkedin-60.png" alt="LinkedIn" /></a>
+        <a href="#"><img src="icons8-facebook-60.png" alt="Facebook" /></a>
+        <a href="https://www.researchgate.net/profile/Mohamad-Yazbeck-2" target="_blank" rel="noopener"><img src="icons8-researchgate-64.png" alt="ResearchGate" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('mobileSidebar');
+      if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+      } else {
+        sidebar.style.width = '250px';
+      }
+    }
+
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const fullMessage = `Hello Dr. Yazbeck,%0A%0AName: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+
+      // Replace with Dr. Yazbeck's WhatsApp number (no + or spaces)
+      const whatsappNumber = "96170754660";
+
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
