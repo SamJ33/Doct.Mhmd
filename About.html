@@ -481,6 +481,43 @@ footer {
 
 
 </script>
+  <!-- Place this snippet just before </body> -->
+
+<!-- Google Translate Element -->
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'ar,en',  // Add any languages you want
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Optional CSS for RTL support -->
+<style>
+/* When Google Translate sets RTL direction */
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Adjust navigation for RTL */
+body[dir="rtl"] header nav {
+  flex-direction: row-reverse;
+}
+
+/* Adjust hero section for RTL */
+body[dir="rtl"] .hero-inner,
+body[dir="rtl"] .why-dr-content {
+  flex-direction: row-reverse;
+}
+</style>
+
 
 <body>
 <header>
@@ -767,6 +804,7 @@ This case highlights that even in asymptomatic older children, hydrocephalus fro
 </body>
 
 </html>
+
 
 
 
