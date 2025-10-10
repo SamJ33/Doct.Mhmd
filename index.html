@@ -216,11 +216,13 @@
 
       .hero-image img {
         width: 100%;
-        max-width: 300px;
+        height: auto; /* Maintain aspect ratio */
+        max-width: 300px; /* Optional: limits size on large screens */
         border-radius: 50%;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         object-fit: cover;
-      }
+}
+
       .stats {
         position: relative;
         display: flex;
@@ -274,10 +276,13 @@
       }
 
       .profile-image img {
-        max-width: 100%;
+        width: 100%; /* Scales with parent */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 400px; /* Optional: limit size on large screens */
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
+}
+
 
       .text-content {
         flex: 2 1 600px;
@@ -877,6 +882,7 @@
     </script>
   </body>
 </html>
+
 
 
 
